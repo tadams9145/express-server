@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 const app = express();
 let port = process.env.PORT || 3000;
 
@@ -10,6 +11,7 @@ const charactersRoutes = require("./routes/characters");
 // Applied to all requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors());
 
 // Basic GET route that responds with emoji or something
 // Lets us know the server is working
